@@ -3,7 +3,7 @@
 int main()
 {
 float a,b,c,d,e;
-printf("enter the quadratic equation as ax2+bx+c where a,b,c are constants");
+printf("enter the quadratic equation as ax^2+bx+c where a,b,c are constants");
 scanf("%fx2+%fx+%f", &a,&b,&c);
 if(a*b*c==0)
 {printf("invalid quadratic equation");}
