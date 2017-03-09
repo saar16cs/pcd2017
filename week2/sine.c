@@ -1,16 +1,16 @@
 #include<stdio.h>
 #include<math.h>
-double convert_radians(double degree)
+float convert_radians(float degree)
 {
-	double rad;
+	float rad;
 	rad=(3.1414/180)*degree;
 	return rad;
 }
 	
-double compute_sine(double x)
+float compute_sine(float x)
 {
 	int i;
-	double diff,index,sum,prev;
+	float diff,index,sum,prev;
 	index=sum=x;
 	diff = fabs(x); 
 	for(i=3;diff>0.00001;i=i+2)
@@ -25,12 +25,12 @@ double compute_sine(double x)
 
 int main()
 {
-	double degree,rad,sine;
+	float degree,rad,sine;
 	printf("enter the angle:");
-	scanf("%lf", &degree);
+	scanf("%f", &degree);
 	rad=convert_radians(degree);
 	sine=compute_sine(rad);
-	printf("sine(%lf) = %.6lf ---by our method\n", degree, sine);
-	printf("sine(%lf) = %.6lf ---by library function\n", degree, sin(rad));
+	printf("sine(%f) = %.6f ---by our method\n", degree, sine);
+	printf("sine(%f) = %.6f ---by library function\n", degree, sin(rad));
 	return 0;
 }
