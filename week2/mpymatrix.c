@@ -1,4 +1,4 @@
-//multiplication of 2*2 matrix
+//multiplication of 2 matrix
 #include<stdio.h>
 const int m;
 const int n; 
@@ -13,7 +13,7 @@ int get_matrix(int i,int j)
 
 int main()
 {
-    int i,j,m,n;
+    int i,j,m,n,k,sum;
     printf("enter the order of matrix in format a*b");
     scanf("%d*%d",&m,&n);
     int a[m][n],b[m][n];
@@ -38,7 +38,12 @@ int main()
     {
         for(j=0;j<=n-1;j++)
         {
-            c[i][j]=(a[0][i]*b[0][j])+(a[i][1]*b[1][j]);
+            for(k=0;k<=m-1;k++)
+            {
+            sum=sum+(a[i][k]*b[k][j]);
+            c[i][j]=sum;
+            }
+        sum=0;        
         }
     }  
         for(i=0;i<=m-1;i++)
