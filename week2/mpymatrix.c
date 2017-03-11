@@ -1,7 +1,6 @@
-//multiplication of 2 matrix
+//multiplication of matrix
 #include<stdio.h>
-const int m;
-const int n; 
+const int n,m;
 int get_matrix(int i,int j)
 {
     int num;
@@ -10,10 +9,34 @@ int get_matrix(int i,int j)
     return num;    
 }
 
+void print_matrix(int a[][n],int b[][n],int m,int n)
+{   
+    int c[m][n];
+    int i,j,k,sum;
+      for(i=0;i<=m-1;i++)
+    {
+        for(j=0;j<=n-1;j++)
+        {   sum=0;
+            for(k=0;k<=m-1;k++)
+            {
+                sum=sum+a[i][k]*b[k][j];
+                c[i][j]=sum;
+            }
+        }
+    }  printf("c=a*b=\n");
+        for(i=0;i<=m-1;i++)
+    {
+        for(j=0;j<=n-1;j++)
+        {
+            printf("{%d ", c[i][j]);
+        }
+        printf("}\n");
+    }
+}
 
 int main()
 {
-    int i,j,m,n,k,sum;
+    int i,j;
     printf("enter the order of matrix in format a*b");
     scanf("%d*%d",&m,&n);
     int a[m][n],b[m][n];
@@ -32,27 +55,6 @@ int main()
             b[i][j]=get_matrix(i,j);
         }
     }
-        int c[m][n];
-   
-      for(i=0;i<=m-1;i++)
-    {
-        for(j=0;j<=n-1;j++)
-        {
-            for(k=0;k<=m-1;k++)
-            {
-            sum=sum+(a[i][k]*b[k][j]);
-            c[i][j]=sum;
-            }
-        sum=0;        
-        }
-    }  
-        for(i=0;i<=m-1;i++)
-    {
-        for(j=0;j<=n-1;j++)
-        {
-            printf("{%d ", c[i][j]);
-        }
-        printf("}\n");
-    } 
+    print_matrix(a,b,m,n); 
     return 0;   
 }
