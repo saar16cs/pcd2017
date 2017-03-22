@@ -7,7 +7,7 @@ unsigned int rightshift(unsigned int x, unsigned int n)
 	{
 		if(x%2==0)
 		{
-			x>>1;
+			x=x>>1;
 		}
 		else
 		{
