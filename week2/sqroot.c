@@ -15,11 +15,11 @@ float sqroot(float num)
 
 int main()
 {
-float num,x;
-printf("enter the number");
-scanf("%f",&num);
-x=sqroot(num);
-printf("square root of %.2f is %.2f\n",num,x);
-printf("square root of %.2f is %.2f\n",num,sqrt(num));
-return 0;
+    float num,x;
+    printf("enter the number");
+    scanf("%f",&num);
+    x=sqroot(num);
+    printf("square root of %.2f is %.2f\n",num,x);
+    printf("square root of %.2f is %.2f\n",num,sqrt(num));
+    return 0;
 }
