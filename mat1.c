@@ -48,7 +48,7 @@ void display(int **p,int m,int n)
 {
      int i,j;
      for(i=0;i<m;i++)
-
+     {
           for(j=0;j<n;j++)
           {
                printf("%d\t",p[i][j]);
@@ -61,6 +61,11 @@ int main()
      int m,n;
      printf("enter order of matrix:\n");
      scanf("%d%d",&m,&n);//read order of matrix
+     if(m<=0 || n<=0)
+     {
+          printf("invalid value of order try again\n");
+          main();    
+     }
      int **p;
      p=(int **)malloc(sizeof(int*)*m);
      int i,j;
