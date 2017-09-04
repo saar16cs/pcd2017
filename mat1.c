@@ -20,9 +20,12 @@ void rotate(int **p,int m,int n)
      {
           for(j=0;j<n;j++)
           {  
+               if(p[i][j]!=p[m-1][j])
+               {
                   p[i][j]+=p[m-1-i][j];
                   p[m-1-i][j]=p[i][j]-p[m-1-i][j];
                   p[i][j]=p[i][j]-p[m-1-i][j];   
+               }
           }
      }
      m=m+n;
@@ -32,7 +35,7 @@ void rotate(int **p,int m,int n)
      {
           for(j=i;j<n;j++)
           {  
-               if(i!=j)
+               if(p[i][j]!=p[j][i])
                {
                     p[i][j]+=p[j][i];
                     p[j][i]=p[i][j]-p[j][i];
@@ -45,7 +48,7 @@ void display(int **p,int m,int n)
 {
      int i,j;
      for(i=0;i<m;i++)
-     {
+
           for(j=0;j<n;j++)
           {
                printf("%d\t",p[i][j]);
